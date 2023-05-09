@@ -34,9 +34,9 @@ with zipfile.ZipFile(config.get('default', 'directory')+file) as file_zip:
         # Separar el nombre del archivo y su extensión
         file_name, extension = os.path.splitext(filename)
         # Buscar la primera aparición de una letra en el nombre del archivo
-        primer_letra = re.search("[a-zA-Z]", file_name)
+        fist_letter = re.search("[a-zA-Z]", file_name)
         # Eliminar los caracteres anteriores a la primera aparición de una letra
-        name_without_numbers = file_name[primer_letra.start():]
+        name_without_numbers = file_name[fist_letter.start():]
         # Establecer la cadena del nombre nuevo
         new_name = actual_date +name_without_numbers+ os.path.splitext(filename)[1]
         # Renombrar el archivo
